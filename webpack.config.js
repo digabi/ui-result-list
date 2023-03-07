@@ -3,7 +3,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
-module.exports = function (env, argv) {
+module.exports = function (_env, _argv) {
   return {
     mode: 'production',
     devtool: 'source-map',
@@ -14,6 +14,8 @@ module.exports = function (env, argv) {
       path: `${__dirname}/lib`,
       filename: '[name]-bundle.js',
       publicPath: '/lib/',
+      libraryTarget: 'umd',
+      library: 'ui-result-list',
       assetModuleFilename: '[name][ext]'
     },
     plugins: [
