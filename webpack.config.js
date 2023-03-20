@@ -8,14 +8,14 @@ module.exports = function (_env, _argv) {
     mode: 'production',
     devtool: 'source-map',
     entry: {
-      index: './src/index.ts'
+      index: './lib/index.js'
     },
     output: {
       path: `${__dirname}/lib`,
       filename: '[name]-bundle.js',
       publicPath: '/lib/',
       libraryTarget: 'umd',
-      library: 'ui-result-list',
+      library: 'ResultListBundle',
       assetModuleFilename: '[name][ext]'
     },
     plugins: [
@@ -25,7 +25,7 @@ module.exports = function (_env, _argv) {
       new CssMinimizerPlugin()
     ],
     resolve: {
-      extensions: ['.ts', '.tsx', '.json']
+      extensions: ['.ts', '.tsx', '.json', '.js']
     },
     module: {
       rules: [
