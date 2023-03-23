@@ -45,7 +45,7 @@ export const ExamResults = (props: ExamResultsProps) => {
 }
 
 const getMandatory = (exam: Exam, isLaw2022Student: boolean) => {
-  const { t } = useTranslation()
+  const t = (translateStr: string) => translateStr
   if (isLaw2022Student) return null
   if (exam.mandatory) return t('results.mandatory_exam_short')
   return t('results.extra_exam_short')
@@ -60,7 +60,7 @@ const getExamGradePoints = (exam: Exam) => {
 }
 
 const getExamStatus = (exam: Exam) => {
-  const { t } = useTranslation()
+  const t = (translateStr: string) => translateStr
   if (exam.invalidated) {
     return t('results.invalidated')
   }

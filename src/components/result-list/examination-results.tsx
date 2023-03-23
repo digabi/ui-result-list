@@ -56,7 +56,7 @@ export const ExaminationResults = ({ exams, examinationcode, language, isLaw2022
 }
 
 const getExaminationTitle = (examinationcode: string) => {
-  const { t } = useTranslation()
+  const t = (translateStr: string) => translateStr
   const year = examinationcode.substring(0, 4)
   const season = examinationcode[4] === 'K' ? 'spring' : 'autumn'
 

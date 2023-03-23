@@ -1,29 +1,31 @@
 {
   "name": "@digabi/ui-result-list",
-  "version": "0.2.0",
+  "version": "0.2.1-rc.6",
   "repository": "https://github.com/digabi/ui-result-list",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "engines": {
     "node": ">= 16.0"
   },
-  "main": "lib/index-bundle.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "tsc --project src && webpack --config webpack.config.js",
+    "build": "tsc --project src",
     "lint": "eslint ."
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "typescript": "^4.9.5",
+    "i18next": "^22.0.2",
+    "react-i18next": "^12.2.0"
   },
   "devDependencies": {
     "@digabi/eslint-config": "^2.0.1",
     "@digabi/typescript-config": "^1.0.0",
-    "@types/lodash": "^4.14.191",
-    "@types/react": "^18.0.28",
+    "@types/react": "^17.0.2",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "css-loader": "^6.7.3",
@@ -34,17 +36,13 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
+    "i18next": "^22.0.2",
     "less-loader": "^11.1.0",
     "mini-css-extract-plugin": "^2.7.2",
     "prettier": "^2.8.4",
     "react": "^17.0.2",
+    "react-i18next": "^12.2.0",
     "ts-loader": "^9.4.2",
-    "typescript": "^4.9.5",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
-  },
-  "dependencies": {
-    "i18next": "^22.4.11",
-    "react-i18next": "^12.2.0"
+    "typescript": "^4.9.5"
   }
 }

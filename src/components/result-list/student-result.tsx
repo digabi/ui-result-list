@@ -64,7 +64,7 @@ export const StudentResults = ({ student, language }: StudentResultsProps) => {
 }
 
 const getStatements = (student: Student) => {
-  const { t } = useTranslation()
+  const t = (translateStr: string) => translateStr
   const statements = []
 
   if (student.dyslexias.length > 0) {

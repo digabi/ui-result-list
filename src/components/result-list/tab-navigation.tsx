@@ -91,7 +91,8 @@ export const TabNavigation = ({ resultList, sectionRefs }: TabNavigationProps) =
         <a
           className={activeTab === groupName ? 'active' : undefined}
           onClick={() => scrollTo(groupName)}
-          key={groupName}>
+          key={groupName}
+        >
           {t(`results.groups.${groupName}.navigation`)} ({students.length})
         </a>
       ))}
