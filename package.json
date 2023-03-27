@@ -1,6 +1,6 @@
 {
   "name": "@digabi/ui-result-list",
-  "version": "0.3.0",
+  "version": "0.3.1-rc.1",
   "repository": "https://github.com/digabi/ui-result-list",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -10,17 +10,18 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "less"
   ],
   "scripts": {
     "build": "tsc --project src",
     "lint": "eslint ."
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "typescript": "^4.9.5",
     "i18next": "^22.0.2",
-    "react-i18next": "^12.2.0"
+    "react": "^17.0.2",
+    "react-i18next": "^12.2.0",
+    "typescript": "^4.9.5"
   },
   "devDependencies": {
     "@digabi/eslint-config": "^2.0.1",
