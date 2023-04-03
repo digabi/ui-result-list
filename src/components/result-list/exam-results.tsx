@@ -18,7 +18,8 @@ export const ExamResults = (props: ExamResultsProps) => {
   const hasScores = maximumQuestions > 0 && exam.questionScores
 
   useEffect(() => {
-    setQuestionScores(exam.questionScores.flatMap(score => score).map(score => score.weightedScore))
+    if (exam && exam.questionScores)
+      setQuestionScores(exam.questionScores.flatMap(score => score).map(score => score.weightedScore))
   }, [exam])
 
   return (
