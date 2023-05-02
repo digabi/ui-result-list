@@ -15,7 +15,17 @@ export const ExaminationResults = ({ exams, examinationcode, language, isLaw2022
   const [lastCompletedExamIndex, setLastCompletedExamIndex] = useState<number>(0)
 
   useEffect(() => {
-    setMaximumQuestions(Math.max(...exams.map(exam => exam.questionScores.flatMap(score => score).length)))
+    setMaximumQuestions(
+      Math.max(
+        ...exams.map(exam => {
+          if (exam.questionScores) {
+            return exam.questionScores.flatMap(score => score).length
+          } else {
+            return 0
+          }
+        })
+      )
+    )
 
     const firstIncompleteExam = exams.find(exam => !exam.questionScores)
     const firstIncompleteExamIndex = firstIncompleteExam ? exams.indexOf(firstIncompleteExam) : exams.length

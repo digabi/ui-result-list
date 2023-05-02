@@ -1,6 +1,6 @@
 {
   "name": "@digabi/ui-result-list",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "repository": "https://github.com/digabi/ui-result-list",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -15,18 +15,19 @@
   ],
   "scripts": {
     "build": "tsc --project src",
+    "build:watch": "yarn build && tsc --project src -w --preserveWatchOutput",
     "lint": "eslint ."
   },
   "peerDependencies": {
     "i18next": "^22.0.2",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-i18next": "^12.2.0",
     "typescript": "^4.9.5"
   },
   "devDependencies": {
     "@digabi/eslint-config": "^2.0.1",
     "@digabi/typescript-config": "^1.0.0",
-    "@types/react": "^17.0.2",
+    "@types/react": "^18.2.0",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "css-loader": "^6.7.3",
@@ -43,7 +44,6 @@
     "prettier": "^2.8.4",
     "react": "^17.0.2",
     "react-i18next": "^12.2.0",
-    "ts-loader": "^9.4.2",
     "typescript": "^4.9.5"
   }
 }
