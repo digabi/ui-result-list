@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ExamResults } from './exam-results'
-import { Exam } from './types'
+import { Exam, TechnicalError } from './types'
 import { useTranslation } from 'react-i18next'
 
 interface ExaminationResultsProps {
@@ -8,9 +8,16 @@ interface ExaminationResultsProps {
   examinationcode: string
   language: string
   isLaw2022Student: boolean
+  studentTechnicalErrors: TechnicalError[]
 }
 
-export const ExaminationResults = ({ exams, examinationcode, language, isLaw2022Student }: ExaminationResultsProps) => {
+export const ExaminationResults = ({
+  exams,
+  examinationcode,
+  language,
+  isLaw2022Student,
+  studentTechnicalErrors
+}: ExaminationResultsProps) => {
   const [maximumQuestions, setMaximumQuestions] = useState<number>(0)
   const [lastCompletedExamIndex, setLastCompletedExamIndex] = useState<number>(0)
 
@@ -49,21 +56,28 @@ export const ExaminationResults = ({ exams, examinationcode, language, isLaw2022
           </tr>
         </thead>
         <tbody>
-          {exams.map((exam, index) => (
-            <ExamResults
-              exam={exam}
-              maximumQuestions={maximumQuestions}
-              lastCompletedExam={index === lastCompletedExamIndex}
-              language={language}
-              isLaw2022Student={isLaw2022Student}
-              key={index}
-            />
-          ))}
+          {exams.map((exam, index) => {
+            const examTechnicalError = getTechnicalErrorForExam(exam.examUuid, studentTechnicalErrors)
+            return (
+              <ExamResults
+                exam={exam}
+                maximumQuestions={maximumQuestions}
+                lastCompletedExam={index === lastCompletedExamIndex}
+                language={language}
+                isLaw2022Student={isLaw2022Student}
+                key={index}
+                examTechnicalErrors={examTechnicalError}
+              />
+            )
+          })}
         </tbody>
       </table>
     </div>
   )
 }
+
+const getTechnicalErrorForExam = (examUuid: string, technicalErrors: TechnicalError[]) =>
+  technicalErrors.filter(error => error.examUuid == examUuid)
 
 const getExaminationTitle = (examinationcode: string) => {
   const { t } = useTranslation()

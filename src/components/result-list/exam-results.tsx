@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Exam } from './types'
+import { Exam, Student, TechnicalError } from './types'
 import i18next from 'i18next'
 import { useTranslation } from 'react-i18next'
+import '../../../less/result-list.less'
 
 interface ExamResultsProps {
   exam: Exam
@@ -9,10 +10,11 @@ interface ExamResultsProps {
   lastCompletedExam: boolean
   language: string
   isLaw2022Student: boolean
+  examTechnicalErrors: TechnicalError[]
 }
 
 export const ExamResults = (props: ExamResultsProps) => {
-  const { exam, maximumQuestions, lastCompletedExam, language, isLaw2022Student } = props
+  const { exam, maximumQuestions, lastCompletedExam, language, isLaw2022Student, examTechnicalErrors } = props
 
   const [questionScores, setQuestionScores] = useState<Array<number | null>>([])
   const hasScores = maximumQuestions > 0 && exam.questionScores
@@ -24,7 +26,9 @@ export const ExamResults = (props: ExamResultsProps) => {
 
   return (
     <tr className={getExamResultRowClassName(exam, lastCompletedExam)}>
-      <td className="exam-code">{exam.examCode}</td>
+      <td className="exam-code">
+        <b>{exam.examCode}</b>
+      </td>
       <td className="exam-name">{language === 'sv' ? exam.nameSwedish : exam.nameFinnish}</td>
       <td className="exam-required">{getMandatory(exam, isLaw2022Student)}</td>
       <td className="exam-gradecode">{exam.gradecodeCode ? <strong>{exam.gradecodeCode}</strong> : '-'}</td>
@@ -38,6 +42,7 @@ export const ExamResults = (props: ExamResultsProps) => {
             </td>
           ))}
       <td colSpan={!hasScores ? maximumQuestions + 1 : undefined}>
+        <span className="exam-technical-error">{getTechnicalError(examTechnicalErrors[0])}</span>
         <span className="exam-status">{getExamStatus(exam)}</span>
         <span className="exam-grade-points">{getExamGradePoints(exam)}</span>
       </td>
@@ -88,6 +93,14 @@ const getExamStatus = (exam: Exam) => {
 const getExamScore = (exam: Exam) => {
   if (!exam.maxScore || !exam.questionScores) return '-'
   return `${exam.finalGradeScore || '-'}/${exam.maxScore}`
+}
+
+const getTechnicalError = (technicalError: TechnicalError) => {
+  const { t } = useTranslation()
+  if (technicalError) {
+    return `${t('results.technical_error')} (${technicalError.technicalErrorPoints})`
+  }
+  return null
 }
 
 const getQuestionScore = (questionScores: Array<number | null>, index: number) => {

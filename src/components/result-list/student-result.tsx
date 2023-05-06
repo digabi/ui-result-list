@@ -34,7 +34,7 @@ export const StudentResults = ({ student, language }: StudentResultsProps) => {
   }, [student])
 
   return (
-    <div className="student-results">
+    <div className="student-exam-results">
       <h2 className="header">
         <span>
           <strong>{student.name.lastname}</strong> {student.name.firstname}
@@ -54,6 +54,7 @@ export const StudentResults = ({ student, language }: StudentResultsProps) => {
           examinationcode={examinationcode}
           language={language}
           isLaw2022Student={student.isLaw2022Student}
+          studentTechnicalErrors={student.technicalErrors}
         />
       ))}
       {student.includedExams.length ? (
@@ -72,9 +73,6 @@ const getStatements = (student: Student) => {
   }
   if (student.statements.length > 0) {
     statements.push(t('results.statement'))
-  }
-  if (student.technicalErrors.length > 0) {
-    statements.push(t('results.technical_error'))
   }
 
   return statements.map((Statement, index) =>

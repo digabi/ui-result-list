@@ -13,7 +13,7 @@ export const getTranslationResources = () => ({
         included_exams: 'Sisällytetyt kokeet',
         dyslexia: 'lukilausunto',
         statement: 'lääkärinlausunto',
-        technical_error: 'häiriö kokeen aikana',
+        technical_error: 'Häiriö kokeen aikana',
         groups: {
           yoGraduated: {
             navigation: 'Ylioppilas',
@@ -76,7 +76,7 @@ export const getTranslationResources = () => ({
         included_exams: 'Innefattade prov',
         dyslexia: 'utlåtande över läs- och skrivsvårigheter',
         statement: 'läkarintyg',
-        technical_error: 'störning under provet',
+        technical_error: 'Störning under provet',
         groups: {
           yoGraduated: {
             navigation: 'Student',
