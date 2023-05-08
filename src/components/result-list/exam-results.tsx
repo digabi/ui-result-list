@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Exam, Student, TechnicalError } from './types'
-import i18next from 'i18next'
 import { useTranslation } from 'react-i18next'
 import '../../../less/result-list.less'
 
@@ -77,9 +76,7 @@ const getExamStatus = (exam: Exam) => {
 
   if (exam.compensationInfo) {
     return exam.compensationInfo.compensated
-      ? `${i18next.t('results.compensated')} (min ${exam.compensationInfo.requiredCompensationPoints}${i18next.t(
-          'results.points'
-        )})`
+      ? `${t('results.compensated')} (min ${exam.compensationInfo.requiredCompensationPoints}${t('results.points')})`
       : t('results.not_compensated')
   }
 
