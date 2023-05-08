@@ -57,7 +57,7 @@ export const ExaminationResults = ({
         </thead>
         <tbody>
           {exams.map((exam, index) => {
-            const examTechnicalError = getTechnicalErrorForExam(exam.examUuid, studentTechnicalErrors)
+            const examTechnicalError = getTechnicalErrorForExam(exam.examUuid, studentTechnicalErrors)[0]
             return (
               <ExamResults
                 exam={exam}
@@ -66,7 +66,7 @@ export const ExaminationResults = ({
                 language={language}
                 isLaw2022Student={isLaw2022Student}
                 key={index}
-                examTechnicalErrors={examTechnicalError}
+                examTechnicalError={examTechnicalError}
               />
             )
           })}

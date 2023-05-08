@@ -10,11 +10,11 @@ interface ExamResultsProps {
   lastCompletedExam: boolean
   language: string
   isLaw2022Student: boolean
-  examTechnicalErrors: TechnicalError[]
+  examTechnicalError: TechnicalError
 }
 
 export const ExamResults = (props: ExamResultsProps) => {
-  const { exam, maximumQuestions, lastCompletedExam, language, isLaw2022Student, examTechnicalErrors } = props
+  const { exam, maximumQuestions, lastCompletedExam, language, isLaw2022Student, examTechnicalError } = props
 
   const [questionScores, setQuestionScores] = useState<Array<number | null>>([])
   const hasScores = maximumQuestions > 0 && exam.questionScores
@@ -42,7 +42,7 @@ export const ExamResults = (props: ExamResultsProps) => {
             </td>
           ))}
       <td colSpan={!hasScores ? maximumQuestions + 1 : undefined}>
-        <span className="exam-technical-error">{getTechnicalError(examTechnicalErrors[0])}</span>
+        <span className="exam-technical-error">{getTechnicalError(examTechnicalError)}</span>
         <span className="exam-status">{getExamStatus(exam)}</span>
         <span className="exam-grade-points">{getExamGradePoints(exam)}</span>
       </td>

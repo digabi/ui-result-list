@@ -27,14 +27,14 @@ export const getTranslationResources = () => ({
               'Kokelas on suorittanut ylioppilastutkintoon vaadittavat kokeet hyväksytysti, mutta lukion oppimäärän tai ammatillisen tutkinnon suorittaminen on kesken. Kokelas suorittaa ylioppilastutkinnon ja saa ylioppilastutkintotodistuksen suoritettuaan lukion oppimäärän, ammatillisen perustutkinnon tai muun ylioppilastutkintoon oikeuttavan opintokokonaisuuden.'
           },
           examinationOnGoing: {
-            navigation: 'Tutkinto kesken',
-            title: 'Tutkinto kesken',
+            navigation: 'Kokeet ja opinnot suorittamatta',
+            title: 'Kokeet ja opinnot suorittamatta',
             description:
               'Kokelas on aloittanut ylioppilastutkinnon suorittamisen hajautetusti, mutta ei ole vielä suorittanut kaikkia ylioppilastutkintoon vaadittavia kokeita hyväksytysti. Hän voi jatkaa kokeiden suorittamista tulevilla tutkintokerroilla.'
           },
           canGraduateWithRetryAttempt: {
-            navigation: 'Tutkinto kesken, voi valmistua vain uusimalla',
-            title: 'Tutkinto kesken, voi valmistua vain uusimalla',
+            navigation: 'Hylättyjä kokeita uusittava',
+            title: 'Hylättyjä kokeita uusittava',
             description:
               'Kokelas on ilmoittautunut ylioppilastutkintoon vaadittaviin kokeisiin, mutta ei ole saanut joistakin kokeista hyväksyttyä arvosanaa. Kokelas ei myöskään saa tutkintoaan valmiiksi kompensaation kautta. Hän voi kuitenkin jatkaa tutkinnon suorittamista uusimalla hylättyjä kokeita.'
           },
@@ -90,14 +90,14 @@ export const getTranslationResources = () => ({
               'Examinanden har avlagt proven som krävs för examen men gymnasiets lärokurs eller yrkesinriktad grundexamen är inte avlagd. Examinanden avlägger studentexamen och får studentexamensbetyg då hen avlagt gymnasiets lärokurs, yrkesinriktad grundexamen eller motsvarande annan studiehelhet som berättigar till avläggande av studentexamen.'
           },
           examinationOnGoing: {
-            navigation: 'Pågående examen',
-            title: 'Pågående examen',
+            navigation: 'Prov och studier ej avlagda',
+            title: 'Prov och studier ej avlagda',
             description:
               'Examinanden avlägger studentexamen under flera examenstillfällen men har ännu inte avlagt alla prov som krävs för examen med godkänt betyg. Examinanden kan fortsätta avlägga studentexamen vid kommande examenstillfällen.'
           },
           canGraduateWithRetryAttempt: {
-            navigation: 'Pågående examen, kräver omtagning',
-            title: 'Pågående examen, kräver omtagning',
+            navigation: 'Kräver omtagning av underkända prov',
+            title: 'Kräver omtagning av underkända prov',
             description:
               'Examinanden har anmält sig till de prov som krävs för examen, men har inte fått godkänt vitsord på något av proven. Examinanden kan inte heller få examen klar genom kompensation. Hen kan dock fortsätta sin examen genom att ta om underkända prov.'
           },
