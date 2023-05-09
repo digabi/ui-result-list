@@ -57,7 +57,11 @@ export const ExaminationResults = ({
         </thead>
         <tbody>
           {exams.map((exam, index) => {
-            const examTechnicalError = getTechnicalErrorForExam(exam.examUuid, studentTechnicalErrors)[0]
+            const examTechnicalError = getTechnicalErrorForExam(
+              exam.examUuid,
+              exam.examinationcode,
+              studentTechnicalErrors
+            )[0]
             return (
               <ExamResults
                 exam={exam}
@@ -76,8 +80,8 @@ export const ExaminationResults = ({
   )
 }
 
-const getTechnicalErrorForExam = (examUuid: string, technicalErrors: TechnicalError[]) =>
-  technicalErrors.filter(error => error.examUuid == examUuid)
+const getTechnicalErrorForExam = (examUuid: string, examinationcode: string, technicalErrors: TechnicalError[]) =>
+  technicalErrors.filter(error => error.examUuid == examUuid && error.examinationcode == examinationcode)
 
 const getExaminationTitle = (examinationcode: string) => {
   const { t } = useTranslation()

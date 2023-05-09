@@ -35,7 +35,7 @@ export interface Student {
   studiesComplete: boolean
   gradePoints: number
   graduationExaminationCode: string
-  technicalErrors: { technicalErrorPoints: number; gradingExamId: number; examUuid: string }[]
+  technicalErrors: { technicalErrorPoints: number; gradingExamId: number; examUuid: string; examinationcode: string }[]
   isLaw2022Student: boolean
   languageCounterbalance: boolean
   exams: Exam[]
@@ -110,4 +110,5 @@ export interface TechnicalError {
   technicalErrorPoints: number
   gradingExamId: number
   examUuid: string
+  examinationcode: string
 }
