@@ -1,5 +1,6 @@
 import React from 'react'
 import { IncludedExam } from './types'
+import { useTranslation } from 'react-i18next'
 
 interface IncludedExamResultsProps {
   includedExams: IncludedExam[]
@@ -7,6 +8,7 @@ interface IncludedExamResultsProps {
 }
 
 export const IncludedExamResults = ({ includedExams, language }: IncludedExamResultsProps) => {
+  const { t } = useTranslation()
   const getExamDetailElements = (exam: IncludedExam) => {
     const examDetails = exam.details[0]
 
@@ -22,7 +24,7 @@ export const IncludedExamResults = ({ includedExams, language }: IncludedExamRes
       <table>
         <thead>
           <tr>
-            <th colSpan={5}>results.included_exams</th>
+            <th colSpan={5}>{t('results.included_exams')}</th>
           </tr>
         </thead>
         <tbody>
