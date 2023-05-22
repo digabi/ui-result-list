@@ -66,6 +66,7 @@ const getExamGradePoints = (exam: Exam) => {
 
 const getExamStatus = (exam: Exam) => {
   const { t } = useTranslation()
+  const statusInfo: string[] = []
   if (exam.invalidated) {
     return t('results.invalidated')
   }
@@ -75,16 +76,18 @@ const getExamStatus = (exam: Exam) => {
   }
 
   if (exam.compensationInfo) {
-    return exam.compensationInfo.compensated
-      ? `${t('results.compensated')} (min ${exam.compensationInfo.requiredCompensationPoints}${t('results.points')})`
-      : t('results.not_compensated')
+    statusInfo.push(
+      exam.compensationInfo.compensated
+        ? `${t('results.compensated')} (min ${exam.compensationInfo.requiredCompensationPoints}${t('results.points')})`
+        : t('results.not_compensated')
+    )
   }
 
   if (exam.gradeRaised) {
-    return t('results.grade_raised')
+    statusInfo.push(t('results.grade_raised'))
   }
 
-  return null
+  return statusInfo.length > 0 ? `${statusInfo.join(', ')}` : null
 }
 
 const getExamScore = (exam: Exam) => {
