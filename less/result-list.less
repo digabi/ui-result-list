@@ -1,237 +1,238 @@
 
-.result-list-component-container {    
-    max-width: 1500px;
-    margin: 0 auto;
+.result-list-component-container {
+  max-width: 1500px;
+  margin: 0 auto;
 
-    h1 > {
-        padding-left: 10px;
+  h1 > {
+    padding-left: 10px;
+  }
+
+  .description {
+    padding-left: 10px;
+    margin-bottom: 32px;
+    max-width: 860px;
+  }
+
+  .tab-navigation {
+    position: sticky;
+    top: 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(237, 237, 237, 1) 0%, rgba(250, 250, 250, 1) 100%);
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
     }
 
-    .description {
-        padding-left: 10px;
-        margin-bottom: 32px;
-        max-width: 860px;
-    }
+    a {
+      font-size: 16px;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: #6d6d6d;
+      text-decoration: none;
+      padding: 3px 0px;
+      margin-right: 10px;
+      min-width: 100px;
+      text-align: center;
 
-    .tab-navigation {
-        position: sticky;
-        top: 0;
-        padding: 20px 0;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
+      &:hover {
+        color: #000;
+      }
 
-        &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(237, 237, 237, 1) 0%, rgba(250, 250, 250, 1) 100%);
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        }
-
-        a {
-        font-size: 16px;
-        text-transform: uppercase;
-        cursor: pointer;
-        color: #6d6d6d;
-        text-decoration: none;
-        padding: 3px 0px;
-        margin-right: 10px;
-        min-width: 100px;
-        text-align: center;
-
-        &:hover {
-            color: #000;
-        }
-
-        &.active {
-            border-bottom: 3px solid #359bb7;
-            color: #000;
-        }
-        }
-    }
-}
-
-.student-exam-results {
-    .header {
-      font-weight: normal;
-      padding: 10px;
-      border-bottom: 1px #000 solid;
-  
-      .birthday {
-        display: none;
-  
-        &.no-ssn {
-          display: inline-block;
-        }
-      }
-  
-      > span {
-        padding-right: 10px;
-      }
-  
-      .total-grade-points {
-        float: right;
-        font-weight: bold;
-        text-align: right;
-        padding-right: 0px;
-      }
-    }
-  
-    div.examination-results {
-      padding: 10px;
-  
-      table {
-        width: auto;
-        padding-right: 8px;
-      }
-  
-      td,
-      th {
-        text-align: left;
-      }
-  
-      td {
-        white-space: nowrap;
-        font-size: 16px;
-      }
-  
-      td.exam-name {
-        min-width: 170px;
-      }
-  
-      td.exam-code {
-        min-width: 32px;
-        padding: 5px 0;
-      }
-  
-      td.exam-required {
-        min-width: 64px;
-      }
-  
-      td.exam-gradecode {
-        min-width: 26px;
-      }
-  
-      td.exam-score {
-        min-width: 75px;
-      }
-  
-      td:last-child {
-        text-align: right;
-        width: 100%;
-  
-        .exam-technical-error {
-          text-align: right;
-          padding-right: 10px;
-          font-size: 12px;
-          color: #a6a6a6;
-        }
-
-        .exam-status {
-          padding-right: 10px;
-          font-size: 12px;
-        }
-      }
-  
-      th.question-score,
-      td.question-score {
-        padding: 0 4px;
-        text-align: center;
-        min-width: 24px;
-        font-size: 14px;
-      }
-  
-      th.question-score:nth-child(even),
-      td.question-score:nth-child(even) {
-        background: #eee;
-      }
-  
-      th.question-score {
-        font-weight: normal;
-        font-size: 10px;
-        font-style: italic;
-        padding-bottom: 0px;
-        border-radius: 15px 15px 0 0;
-      }
-  
-      tr.not-best-result {
-        color: #a6a6a6
-      }
-      tr.last-completed-exam td {
-        border-radius: 0 0 15px 15px;
+      &.active {
+        border-bottom: 3px solid #359bb7;
+        color: #000;
       }
     }
   }
+}
+
+.student-exam-results {
+  .header {
+    font-weight: normal;
+    padding: 10px;
+    border-bottom: 1px #000 solid;
+
+    .birthday {
+      display: none;
+
+      &.no-ssn {
+        display: inline-block;
+      }
+    }
+
+    > span {
+      padding-right: 10px;
+    }
+
+    .total-grade-points {
+      float: right;
+      font-weight: bold;
+      text-align: right;
+      padding-right: 0px;
+    }
+  }
+
+  div.examination-results {
+    padding: 10px;
+
+    table {
+      width: auto;
+      padding-right: 8px;
+    }
+
+    td,
+    th {
+      text-align: left;
+    }
+
+    td {
+      white-space: nowrap;
+      font-size: 16px;
+    }
+
+    td.exam-name {
+      min-width: 170px;
+    }
+
+    td.exam-code {
+      min-width: 32px;
+      padding: 5px 0;
+    }
+
+    td.exam-required {
+      min-width: 64px;
+    }
+
+    td.exam-gradecode {
+      min-width: 26px;
+    }
+
+    td.exam-score {
+      min-width: 75px;
+    }
+
+    td:last-child {
+      text-align: right;
+      width: 100%;
+
+      .exam-technical-error {
+        text-align: right;
+        padding-right: 10px;
+        font-size: 12px;
+        color: #a6a6a6;
+      }
+
+      .exam-status {
+        padding-right: 10px;
+        font-size: 12px;
+      }
+    }
+
+    th.question-score,
+    td.question-score {
+      padding: 0 4px;
+      text-align: center;
+      min-width: 24px;
+      font-size: 14px;
+    }
+
+    th.question-score:nth-child(even),
+    td.question-score:nth-child(even) {
+      background: #eee;
+    }
+
+    th.question-score {
+      font-weight: normal;
+      font-size: 10px;
+      font-style: italic;
+      padding-bottom: 0px;
+      border-radius: 15px 15px 0 0;
+    }
+
+    tr.not-best-result {
+      color: #a6a6a6
+    }
+
+    tr.last-completed-exam td {
+      border-radius: 0 0 15px 15px;
+    }
+  }
+}
 
 
 @media print {
-    .result-list-component-container {  
-        > .tab-navigation {
-          display: none;
-        }
-  
-        .student-results {
-          page-break-inside: avoid;
-  
-          tr,
-          td {
-            font-size: 12px;
-            line-height: 18px;
-          }
-  
-          td.exam-code {
-            min-width: 24px;
-            padding: 3px 0;
-          }
-  
-          td.exam-name {
-            min-width: 120px;
-          }
-  
-          td.exam-score {
-            min-width: 48px;
-          }
-  
-          td.exam-required {
-            min-width: 48px;
-          }
-  
-          th.question-score,
-          td.question-score {
-            padding: 0 2px;
-            min-width: 12px;
-            max-width: 18px;
-            font-size: 8px;
-          }
-  
-          td:last-child .exam-status {
-            padding-right: 8px;
-            font-size: 8px;
-          }
-  
-          .birthday {
-            display: inline-block !important;
-          }
-  
-          .ssn {
-            display: none;
-          }
-  
-          .statements {
-            display: none;
-          }
-        }
-  
-        .question-score {
-            print-color-adjust: exact;
-            -webkit-print-color-adjust: exact;
-        }
+  .result-list-component-container {
+    > .tab-navigation {
+      display: none;
+    }
+
+    .student-results {
+      page-break-inside: avoid;
+
+      tr,
+      td {
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      td.exam-code {
+        min-width: 24px;
+        padding: 3px 0;
+      }
+
+      td.exam-name {
+        min-width: 120px;
+      }
+
+      td.exam-score {
+        min-width: 48px;
+      }
+
+      td.exam-required {
+        min-width: 48px;
+      }
+
+      th.question-score,
+      td.question-score {
+        padding: 0 2px;
+        min-width: 12px;
+        max-width: 18px;
+        font-size: 8px;
+      }
+
+      td:last-child .exam-status {
+        padding-right: 8px;
+        font-size: 8px;
+      }
+
+      .birthday {
+        display: inline-block !important;
+      }
+
+      .ssn {
+        display: none;
+      }
+
+      .statements {
+        display: none;
       }
     }
+
+    .question-score {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+  }
+}
