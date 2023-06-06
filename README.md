@@ -2,8 +2,15 @@
 
 
 ## Publishing new versions
-Pre-releases are optional and usually used for testing changes on e.g. staging environments. Use separate branches when using pre-releases and clean commit history before merging into the main branch 🙏
+
+You need to set publish token before publishing:
+```
+npm config set _authToken=%YOUR_ACCES_TOKEN%
+```
+Token can be found in Keepass.
+
 ### Pre-release
+Pre-releases are optional and usually used for testing changes on e.g. staging environments. Use separate branches when using pre-releases and clean commit history before merging into the main branch 🙏
 ```
 git add .
 git commit -a
