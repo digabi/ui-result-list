@@ -37,7 +37,7 @@ const ResultListContent = (props: { language: string; resultList: ResultListGrou
           <div className="description">{t(`results.groups.${resultListGroup.groupName}.description`)}</div>
           {resultListGroup.students.map((student: Student) => (
             <StudentResults
-              key={student.studentUuid.concat(resultListGroup.groupName)}
+              key={`${student.studentUuid || student.birthday}${resultListGroup.groupName}`}
               student={student}
               language="fi"
             />
