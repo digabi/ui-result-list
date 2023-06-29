@@ -31,11 +31,11 @@ export interface Student {
   }[]
   ssn: string
   statements: Statement[]
-  studentUuid: string
+  studentUuid?: string
   studiesComplete: boolean
   gradePoints: number
   graduationExaminationCode: string
-  technicalErrors: { technicalErrorPoints: number; gradingExamId: number; examUuid: string; examinationcode: string }[]
+  technicalErrors?: { technicalErrorPoints: number; gradingExamId: number; examUuid: string; examinationcode: string }[]
   isLaw2022Student: boolean
   languageCounterbalance: boolean
   exams: Exam[]

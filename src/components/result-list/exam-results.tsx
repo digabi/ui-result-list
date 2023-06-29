@@ -9,7 +9,7 @@ interface ExamResultsProps {
   lastCompletedExam: boolean
   language: string
   isLaw2022Student: boolean
-  examTechnicalError: TechnicalError
+  examTechnicalError?: TechnicalError
 }
 
 export const ExamResults = (props: ExamResultsProps) => {
@@ -95,7 +95,7 @@ const getExamScore = (exam: Exam) => {
   return `${exam.finalGradeScore || '-'}/${exam.maxScore}`
 }
 
-const getTechnicalError = (technicalError: TechnicalError) => {
+const getTechnicalError = (technicalError?: TechnicalError) => {
   const { t } = useTranslation()
   if (technicalError) {
     return `${t('results.technical_error')} (${technicalError.technicalErrorPoints})`

@@ -8,7 +8,7 @@ interface ExaminationResultsProps {
   examinationcode: string
   language: string
   isLaw2022Student: boolean
-  studentTechnicalErrors: TechnicalError[]
+  studentTechnicalErrors?: TechnicalError[]
 }
 
 export const ExaminationResults = ({
@@ -57,11 +57,10 @@ export const ExaminationResults = ({
         </thead>
         <tbody>
           {exams.map((exam, index) => {
-            const examTechnicalError = getTechnicalErrorForExam(
-              exam.examUuid,
-              exam.examinationcode,
-              studentTechnicalErrors
-            )[0]
+            const examTechnicalError = studentTechnicalErrors
+              ? getTechnicalErrorForExam(exam.examUuid, exam.examinationcode, studentTechnicalErrors)[0]
+              : undefined
+
             return (
               <ExamResults
                 exam={exam}
