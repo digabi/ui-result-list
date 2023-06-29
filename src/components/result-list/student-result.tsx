@@ -18,8 +18,13 @@ export const StudentResults = ({ student, language }: StudentResultsProps) => {
   const [totalGradePoints, setTotalGradePoints] = useState<number>()
 
   useEffect(() => {
-    const addIncludedExamPoints = (gradePoints: number) =>
-      student.includedExams.reduce((total, exam) => exam.details[0].gradePoints + total, gradePoints)
+    const addIncludedExamPoints = (gradePoints: number) => {
+      if (!student.includedExams) {
+        return gradePoints
+      }
+
+      return student.includedExams.reduce((total, exam) => exam.details[0].gradePoints + total, gradePoints)
+    }
 
     const calculatedGradePoints = student.exams.reduce((total, exam) => {
       if (exam.isBestGrade) {
@@ -57,7 +62,7 @@ export const StudentResults = ({ student, language }: StudentResultsProps) => {
           studentTechnicalErrors={student.technicalErrors}
         />
       ))}
-      {student.includedExams.length ? (
+      {student.includedExams?.length ? (
         <IncludedExamResults includedExams={student.includedExams} language={language} />
       ) : null}
     </div>

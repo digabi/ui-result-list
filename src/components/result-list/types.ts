@@ -39,7 +39,7 @@ export interface Student {
   isLaw2022Student: boolean
   languageCounterbalance: boolean
   exams: Exam[]
-  includedExams: IncludedExam[]
+  includedExams?: IncludedExam[]
   birthday: string
 }
 
