@@ -7,13 +7,14 @@ import { useTranslation } from 'react-i18next'
 interface StudentResultsProps {
   student: Student
   language: string
+  studentBaseUrl?: string
 }
 
 interface ExamsByExamination {
   [key: string]: Exam[]
 }
 
-export const StudentResults = ({ student, language }: StudentResultsProps) => {
+export const StudentResults = ({ student, language, studentBaseUrl }: StudentResultsProps) => {
   const [exams, setExams] = useState<ExamsByExamination>({})
   const [totalGradePoints, setTotalGradePoints] = useState<number>()
 
@@ -38,12 +39,20 @@ export const StudentResults = ({ student, language }: StudentResultsProps) => {
     setExams(groupExams(student.exams))
   }, [student])
 
+  const studentName = (
+    <span>
+      <strong>{student.name.lastname}</strong> {student.name.firstname}
+    </span>
+  )
+
   return (
     <div className="student-exam-results">
       <h2 className="header">
-        <span>
-          <strong>{student.name.lastname}</strong> {student.name.firstname}
-        </span>
+        {studentBaseUrl && student.studentUuid ? (
+          <a href={`${studentBaseUrl}${student.studentUuid}`}>{studentName}</a>
+        ) : (
+          studentName
+        )}
         {student.ssn && <span className="ssn">{student.ssn}</span>}
         <span className={student.ssn ? 'birthday' : 'birthday no-ssn'}>{student.birthday}</span>
         <span className="statements">

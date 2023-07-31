@@ -10,17 +10,22 @@ function useArrayRef() {
   return [refs, (element: HTMLDivElement | null) => element && refs.push(element)] as const
 }
 
-export const ResultList = (props: { language: string; resultList: ResultListGroup[] }) => (
+interface StudentResultListProps {
+  language: string
+  resultList: ResultListGroup[]
+  studentBaseUrl?: string
+}
+
+export const ResultList = (props: StudentResultListProps) => (
   <I18nextProvider i18n={i18next}>
-    <ResultListContent language={props.language} resultList={props.resultList} />
+    <ResultListContent language={props.language} resultList={props.resultList} studentBaseUrl={props.studentBaseUrl} />
   </I18nextProvider>
 )
 
-const ResultListContent = (props: { language: string; resultList: ResultListGroup[] }) => {
+const ResultListContent = (props: StudentResultListProps) => {
   const { t, i18n } = useTranslation()
   const [sectionRefs, setSectionRef] = useArrayRef()
-  const resultList = props.resultList
-  const language = props.language
+  const { resultList, language, studentBaseUrl } = props
 
   useEffect(() => {
     void i18n.changeLanguage(language)
@@ -40,6 +45,7 @@ const ResultListContent = (props: { language: string; resultList: ResultListGrou
               key={`${student.studentUuid || student.birthday}${resultListGroup.groupName}`}
               student={student}
               language="fi"
+              studentBaseUrl={studentBaseUrl}
             />
           ))}
         </div>
