@@ -26,7 +26,7 @@ npm publish --tag next
 
 ### Release
 
-Execute these on the main branch after all changes to be published are merged and pushed
+Execute these on the `main` branch after all changes to be published are merged and pushed
 
 ```
 yarn build
