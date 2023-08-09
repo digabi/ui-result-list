@@ -55,6 +55,12 @@ export const getTranslationResources = () => ({
             title: 'Erillisen kokeen suorittaja',
             description:
               'Kokelas suorittaa erillisiä kokeita, jotka eivät muodosta ylioppilastutkintoa. Kokelas saa erillisen todistuksen kuluvan tutkintokerran hyväksytyistä suorituksista.'
+          },
+          other: {
+            navigation: 'Tutkinto kesken',
+            title: 'Tutkinto kesken',
+            description:
+              'Kokelas on aloittanut ylioppilastutkinnon suorittamisen hajautetusti, mutta ei ole vielä suorittanut koko ylioppilastutkintoa hyväksytysti. Hän voi jatkaa ylioppilastutkinnon suorittamista tulevilla tutkintokerroilla.'
           }
         }
       },
@@ -118,6 +124,12 @@ export const getTranslationResources = () => ({
             title: 'Avlägger enskilt prov',
             description:
               'Examinanden avlägger enskilda prov som inte bildar studentexamen. Examinanden får separat betyg över de godkända provprestationerna vid detta examenstillfälle.'
+          },
+          other: {
+            navigation: 'Pågående examen',
+            title: 'Pågående examen',
+            description:
+              'Examinanden avlägger studentexamen under flera examenstillfällen men har ännu inte avlagt hela studentexamen med godkänt betyg. Examinanden kan fortsätta avlägga studentexamen vid kommande examenstillfällen.'
           }
         }
       },
