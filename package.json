@@ -14,8 +14,8 @@
     "less"
   ],
   "scripts": {
-    "build": "tsc --project src",
-    "build:watch": "yarn build && tsc --project src -w --preserveWatchOutput",
+    "compile": "tsc --project src",
+    "compile:watch": "yarn compile && tsc --project src -w --preserveWatchOutput",
     "lint": "eslint ."
   },
   "peerDependencies": {
