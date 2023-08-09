@@ -32,3 +32,4 @@ jobs:
           key: yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn --frozen-lockfile
       - run: yarn lint
+      - run: yarn compile
