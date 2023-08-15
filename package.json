@@ -1,6 +1,6 @@
 {
   "name": "@digabi/ui-result-list",
-  "version": "1.12.1",
+  "version": "1.12.2-rc.1",
   "repository": "https://github.com/digabi/ui-result-list",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -14,8 +14,8 @@
     "less"
   ],
   "scripts": {
-    "build": "tsc --project src",
-    "build:watch": "yarn build && tsc --project src -w --preserveWatchOutput",
+    "compile": "tsc --project src",
+    "compile:watch": "yarn compile && tsc --project src -w --preserveWatchOutput",
     "lint": "eslint ."
   },
   "peerDependencies": {

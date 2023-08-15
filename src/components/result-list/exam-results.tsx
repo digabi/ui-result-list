@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Exam, Student, TechnicalError } from './types'
+import { Exam, TechnicalError } from './types'
 import { useTranslation } from 'react-i18next'
 import '../../../less/result-list.less'
 
