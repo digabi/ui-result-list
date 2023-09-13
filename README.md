@@ -14,7 +14,7 @@ Alternatively you can have .npmrc file on your disk.
 
 ### To preview changes in `registry` repository:
 
-1. run `yarn compile`
+1. run `npm run compile`
 2. copy folder `lib` into `registry` repository into `node_modules/@digabi/ui-result-list` overwriting the old `lib` folder
 3. run `make restart` in `registry` repository
 
@@ -25,7 +25,7 @@ Pre-releases are optional and usually used for testing changes on e.g. staging e
 ```
 git add .
 git commit -a
-yarn compile
+npm run compile
 git push
 npm version prerelease --preid=rc
 git push
@@ -37,7 +37,7 @@ npm publish --tag next
 Execute these on the `main` branch after all changes to be published are merged and pushed
 
 ```
-yarn compile
+npm run compile
 npm version minor
 git push
 npm publish

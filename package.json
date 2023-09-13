@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "compile": "tsc --project src",
-    "compile:watch": "yarn compile && tsc --project src -w --preserveWatchOutput",
+    "compile:watch": "npm run compile && tsc --project src -w --preserveWatchOutput",
     "lint": "eslint ."
   },
   "peerDependencies": {
