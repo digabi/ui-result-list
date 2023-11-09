@@ -23,6 +23,10 @@ export const StudentResults = ({ student, language, studentBaseUrl }: StudentRes
       if (!student.includedExams) {
         return gradePoints
       }
+      const examUuids = student.exams.map(exam => exam.examUuid)
+      if (student.includedExams.some(exam => examUuids.includes(exam.examUuid))) {
+        return gradePoints
+      }
 
       return (
         student.includedExams
