@@ -1,3 +1,7 @@
 {
-  "extends": "@digabi/typescript-config/public/tsconfig.json"
+  "extends": "@digabi/typescript-config/public/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lib",
+    "noEmit": false
+  }
 }
