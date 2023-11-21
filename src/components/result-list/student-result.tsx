@@ -19,7 +19,7 @@ export const StudentResults = ({ student, language, studentBaseUrl }: StudentRes
   const [totalGradePoints, setTotalGradePoints] = useState<number>()
 
   useEffect(() => {
-    const addIncludedExamPoints = (gradePoints: number) => {
+    const addIncludedExamPoints = (gradePoints: number, examsWithBestGrades: Exam[]) => {
       if (!student.includedExams) {
         return gradePoints
       }
@@ -36,7 +36,7 @@ export const StudentResults = ({ student, language, studentBaseUrl }: StudentRes
 
     const calculatedGradePoints = examsWithBestGrades.reduce((total, exam) => exam.gradePoints + total, 0)
 
-    setTotalGradePoints(addIncludedExamPoints(calculatedGradePoints))
+    setTotalGradePoints(addIncludedExamPoints(calculatedGradePoints, examsWithBestGrades))
     setExams(groupExams(student.exams))
   }, [student])
 
