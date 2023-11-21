@@ -24,37 +24,17 @@ export const StudentResults = ({ student, language, studentBaseUrl }: StudentRes
         return gradePoints
       }
 
-      return (
-        student.includedExams
-          // if exam uuid is in overlappingExamUuids, we have already counted it towards the total
-          .filter(exam => !overlappingExamUuids.includes(exam.examUuid))
-          .reduce((total, exam) => exam.details[0].gradePoints + total, gradePoints)
-      )
+      return student.includedExams
+        .filter(exam => {
+          const examUuidsWithBestGrades = examsWithBestGrades.map(exam => exam.examUuid)
+          return !examUuidsWithBestGrades.includes(exam.examUuid)
+        })
+        .reduce((total, exam) => exam.details[0].gradePoints + total, gradePoints)
     }
 
-    const overlappingExamUuids = student.exams
-      .map(exam => exam.examUuid)
-      .filter(uuid => student.includedExams?.some(includedExam => includedExam.examUuid === uuid))
+    const examsWithBestGrades = student.exams.filter(exam => exam.isBestGrade)
 
-    const calculatedGradePoints = student.exams.reduce((total, exam) => {
-      // Use better score if exam is included in both included exams and exams
-      if (overlappingExamUuids.includes(exam.examUuid)) {
-        const includedExam = student.includedExams?.find(includedExam => includedExam.examUuid === exam.examUuid)
-        if (includedExam) {
-          if (includedExam.details[0].gradePoints > exam.gradePoints) {
-            return includedExam.details[0].gradePoints + total
-          } else {
-            return exam.gradePoints + total
-          }
-        }
-      }
-
-      if (exam.isBestGrade) {
-        return exam.gradePoints + total
-      }
-
-      return total
-    }, 0)
+    const calculatedGradePoints = examsWithBestGrades.reduce((total, exam) => exam.gradePoints + total, 0)
 
     setTotalGradePoints(addIncludedExamPoints(calculatedGradePoints))
     setExams(groupExams(student.exams))
