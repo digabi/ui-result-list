@@ -2,6 +2,8 @@
   "extends": "@digabi/typescript-config/public/tsconfig.json",
   "compilerOptions": {
     "outDir": "lib",
-    "noEmit": false
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": true
   }
 }
