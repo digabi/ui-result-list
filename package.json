@@ -4,9 +4,6 @@
   "repository": "https://github.com/digabi/ui-result-list",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
-  "engines": {
-    "node": ">= 16.0"
-  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
