@@ -1,0 +1,42 @@
+name: Publish npm package
+
+on:
+  push:
+    tags: ['**']
+
+run-name: 'Publish ui-result-list'
+
+concurrency:
+  group: publish-queue # Publish jobs fail if ran simultaneously
+
+permissions:
+  id-token: write # Required for NPM Trusted publishing
+  contents: write
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run compile
+      - name: Publish to npm
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if [[ $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Publishing release version $VERSION with tag latest"
+            npm publish
+          else
+            echo "Publishing prerelease version $VERSION with tag prerelease"
+            npm publish --tag prerelease
+          fi
