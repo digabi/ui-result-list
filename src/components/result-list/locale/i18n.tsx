@@ -1,7 +1,7 @@
-import i18next from 'i18next'
+import i18next, { i18n } from 'i18next'
 import { getTranslationResources } from './translation'
 
-const i18n = i18next.createInstance(
+const i18n: i18n = i18next.createInstance(
   {
     lng: 'fi',
     fallbackLng: 'fi',
