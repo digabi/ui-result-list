@@ -16,30 +16,30 @@
     "lint": "eslint ."
   },
   "peerDependencies": {
-    "i18next": "^23.4.9 || ^24.0.0 || ^25.0.0",
+    "i18next": "^23.4.9 || ^24.0.0 || ^25.0.0 || ^26.0.0",
     "react": "^18.2.0",
-    "react-i18next": "^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0"
+    "react-i18next": "^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@digabi/eslint-config": "^2.0.1",
-    "@digabi/typescript-config": "^1.0.0",
+    "@digabi/eslint-config": "^4.0.1",
+    "@digabi/typescript-config": "^3.0.0",
     "@types/react": "^18.2.0",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
+    "@typescript-eslint/parser": "^8.58.1",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
-    "eslint": "^8.35.0",
+    "eslint": "^9.39.4",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "i18next": "^23.4.9",
+    "i18next": "^26.0.4",
     "less-loader": "^11.1.0",
     "mini-css-extract-plugin": "^2.7.2",
     "prettier": "^3.0.0",
     "react": "^18.2.0",
-    "react-i18next": "^15.4.0",
+    "react-i18next": "^17.0.2",
     "typescript": "^5.0.2"
   }
 }
