@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@digabi/eslint-config": "^2.0.1",
-    "@digabi/typescript-config": "^1.0.0",
+    "@digabi/typescript-config": "^3.0.0",
     "@types/react": "^18.2.0",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
@@ -34,12 +34,12 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
-    "i18next": "^23.4.9",
+    "i18next": "^26.0.4",
     "less-loader": "^11.1.0",
     "mini-css-extract-plugin": "^2.7.2",
     "prettier": "^3.0.0",
     "react": "^18.2.0",
-    "react-i18next": "^15.4.0",
-    "typescript": "^5.0.2"
+    "react-i18next": "^17.0.2",
+    "typescript": "^6.0.2"
   }
 }
