@@ -16,7 +16,7 @@ export interface Student {
     firstname: string
   }
   certificateExaminationCode: string
-  dyslexias: { start: string; end: string | null }[]
+  hasStatementOrDyslexia: boolean
   examination: Examination
   noCompensation: null
   options: {
@@ -30,7 +30,6 @@ export interface Student {
     descriptionSwedish: string
   }[]
   ssn: string
-  statements: Statement[]
   studentUuid?: string
   studiesComplete: boolean
   gradePoints: number
@@ -51,22 +50,6 @@ export interface Examination {
   studyTypeDescFinnish: string
   studyTypeDescSwedish: string
   typeCode: string
-}
-
-interface Statement {
-  description: string
-  descriptionFinnish: string
-  descriptionSwedish: string
-  specialArrangementsGranted: boolean
-  createdAt: string
-  allExams?: boolean
-  studentStatementPermanentId?: number
-  severity?: number
-  period?: {
-    begin: string
-    end: string | null
-  }
-  exams?: { examDetailsYtlRegCode: string; gradingExamId: number }[]
 }
 
 export interface Exam {

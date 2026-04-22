@@ -81,18 +81,12 @@ export const StudentResults = ({ student, language, studentBaseUrl }: StudentRes
 
 const getStatements = (student: Student) => {
   const { t } = useTranslation()
-  const statements = []
 
-  if (student.dyslexias.length > 0) {
-    statements.push(t('results.dyslexia'))
-  }
-  if (student.statements.length > 0) {
-    statements.push(t('results.statement'))
+  if (student.hasStatementOrDyslexia) {
+    return <span>{t('results.statementOrDyslexia')}</span>
   }
 
-  return statements.map((Statement, index) =>
-    index === statements.length - 1 ? <span key={index}>{Statement}</span> : <span key={index}>{Statement}, </span>
-  )
+  return null
 }
 
 const groupExams = (exams: Exam[]) => {
