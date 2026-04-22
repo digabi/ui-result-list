@@ -11,8 +11,7 @@ export const getTranslationResources = () => ({
         mandatory_exam_short: 'pakoll.',
         grade_raised: 'Korotettu',
         included_exams: 'Sisällytetyt kokeet',
-        dyslexia: 'lukilausunto',
-        statement: 'lääkärinlausunto',
+        statementOrDyslexia: 'Koesuoritusta heikentävän syyn lausunto',
         technical_error: 'Häiriö kokeen aikana',
         groups: {
           yoGraduated: {
@@ -80,8 +79,7 @@ export const getTranslationResources = () => ({
         mandatory_exam_short: 'oblig.',
         grade_raised: 'höjt.',
         included_exams: 'Innefattade prov',
-        dyslexia: 'utlåtande över läs- och skrivsvårigheter',
-        statement: 'läkarintyg',
+        statementOrDyslexia: 'Utlåtande om skäl som försämrat provprestationen',
         technical_error: 'Störning under provet',
         groups: {
           yoGraduated: {
