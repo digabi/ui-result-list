@@ -21,7 +21,7 @@
     "react-i18next": "^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "@digabi/eslint-config": "^2.0.1",
+    "@digabi/eslint-config": "^4.0.1",
     "@digabi/typescript-config": "^1.0.0",
     "@types/react": "^18.2.0",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
