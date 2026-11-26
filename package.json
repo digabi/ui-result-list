@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@digabi/eslint-config": "^2.0.1",
-    "@digabi/typescript-config": "^1.0.0",
+    "@digabi/typescript-config": "^3.0.0",
     "@types/react": "^18.2.0",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
